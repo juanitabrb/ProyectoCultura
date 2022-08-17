@@ -15,11 +15,16 @@ export default class extends BaseSchema {
             .references('categorias.id')
             .onDelete('SET NULL')
 
+      table
+            .integer('id_sitio')
+            .unsigned()
+            .references('sitios.id')
+            .onDelete('RESTRICT')
       /**
        * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL
        */
-      table.timestamp('created_at', { useTz: true })
-      table.timestamp('updated_at', { useTz: true })
+      table.timestamp('created_at', { useTz: true }).defaultTo(this.now())
+      table.timestamp('updated_at', { useTz: true }).defaultTo(this.now())
     })
   }
 
