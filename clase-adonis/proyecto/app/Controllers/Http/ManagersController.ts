@@ -3,8 +3,8 @@ import Manager from 'App/Models/Manager';
 
 export default class ManagersController {
     public async index(ctx:HttpContextContract){
-        let usuarios:Manager[]=await Manager.query();
-        return usuarios;
+        let managers:Manager[]=await Manager.query();
+        return managers;
     }
 
     public async store({request}:HttpContextContract){

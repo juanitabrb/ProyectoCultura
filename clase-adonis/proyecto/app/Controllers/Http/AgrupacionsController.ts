@@ -4,8 +4,8 @@ import Agrupacion from "App/Models/Agrupacion";
 
 export default class AgrupacionsController {
     public async index(ctx:HttpContextContract){
-        let usuarios:Agrupacion[]=await Agrupacion.query().preload('manager');
-        return usuarios;
+        let agrupaciones:Agrupacion[]=await Agrupacion.query().preload('manager');
+        return agrupaciones;
     }
 
     public async store({request}:HttpContextContract){

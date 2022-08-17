@@ -37,3 +37,5 @@ Route.get("/agrupacions","AgrupacionsController.index");
 Route.post("/agrupacions","AgrupacionsController.store");
 Route.get("/managers","ManagersController.index");
 Route.post("/managers","ManagersController.store");
+Route.get("/categorias","CategoriasController.index");
+Route.post("/categorias","CategoriasController.store");

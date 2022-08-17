@@ -1,6 +1,7 @@
 import { DateTime } from 'luxon'
-import { BaseModel, column, ManyToMany, manyToMany } from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, BelongsTo, belongsTo, column, ManyToMany, manyToMany } from '@ioc:Adonis/Lucid/Orm'
 import Agrupacion from './Agrupacion'
+import Categoria from './Categoria';
 
 export default class Evento extends BaseModel {
   @column({ isPrimary: true })
@@ -27,5 +28,10 @@ export default class Evento extends BaseModel {
     pivotRelatedForeignKey:'id_agrupacion'
     //pivotColumns: ['nombre-columna'] //obtener datos de columnas adicionales
   })
-  public roles: ManyToMany<typeof Agrupacion>
+  public agrupaciones: ManyToMany<typeof Agrupacion>
+
+  @belongsTo(() => Categoria,{
+    foreignKey: 'id_categoria',  //Nombre de la clave foránea de la entidad dominante
+  })
+  public categoria: BelongsTo<typeof Categoria>
 }

@@ -32,5 +32,5 @@ export default class Agrupacion extends BaseModel {
                                           //que sirve de pivote en la relación
     //pivotColumns: ['created_at'] //obtener datos de columnas adicionales
   })
-  public Eventos: ManyToMany<typeof Evento>
+  public eventos: ManyToMany<typeof Evento>
 }

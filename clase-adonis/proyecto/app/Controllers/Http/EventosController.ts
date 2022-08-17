@@ -4,8 +4,8 @@ import Evento from "App/Models/Evento";
 
 export default class EventosController {
     public async index(ctx:HttpContextContract){
-        let usuarios:Evento[]=await Evento.query();
-        return usuarios;
+        let eventos:Evento[]=await Evento.query();
+        return eventos;
     }
 
     public async store({request}:HttpContextContract){
