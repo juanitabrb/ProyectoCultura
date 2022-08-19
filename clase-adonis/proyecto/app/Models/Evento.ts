@@ -46,12 +46,12 @@ export default class Evento extends BaseModel {
   @hasOne(() => Programacion,{
     foreignKey: 'id_programacion'
   })
-  public perfil: HasOne<typeof Programacion>
+  public programación: HasOne<typeof Programacion>
 
   @belongsTo(() => Sitio,{
     foreignKey: 'id_sitio',  //Nombre de la clave foránea de la entidad dominante
   })
-  public rol: BelongsTo<typeof Sitio>
+  public sitio: BelongsTo<typeof Sitio>
 
   @manyToMany(() => Usuario, {
     pivotTable: 'reservas', //Nombre tabla pivote
