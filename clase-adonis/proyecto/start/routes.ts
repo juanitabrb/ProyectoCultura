@@ -29,3 +29,9 @@ Route.post("/usuarios","UsuariosController.store");
 Route.get("/usuarios/:id","UsuariosController.show");
 Route.put("/usuarios/:id","UsuariosController.update");
 Route.delete("/usuarios/:id","UsuariosController.destroy");
+
+Route.post("/login","SeguridadController.login");
+Route.post("/forgot","SeguridadController.forgotPassword");
+Route.post("/reset","SeguridadController.resetPassword");
+Route.post("/logout","SeguridadController.logout");
+
