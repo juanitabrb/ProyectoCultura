@@ -30,3 +30,10 @@ Route.get("/usuarios/:id","UsuariosController.show");
 Route.put("/usuarios/:id","UsuariosController.update");
 Route.delete("/usuarios/:id","UsuariosController.destroy");
 Route.post("/emailtest","EmailsController.index");
+
+Route.get("/eventos","EventosController.index");
+Route.post("/eventos","EventosController.store");
+Route.get("/agrupacions","AgrupacionsController.index");
+Route.post("/agrupacions","AgrupacionsController.store");
+Route.get("/managers","ManagersController.index");
+Route.post("/managers","ManagersController.store");

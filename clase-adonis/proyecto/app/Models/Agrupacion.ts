@@ -20,7 +20,7 @@ export default class Agrupacion extends BaseModel {
   public updatedAt: DateTime
 
   @hasOne(() => Manager,{
-    foreignKey: 'id_usuario'
+    foreignKey: 'id_agrupacion'
   })
   public manager:HasOne<typeof Manager>
 
