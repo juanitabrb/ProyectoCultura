@@ -7,11 +7,12 @@ export default class extends BaseSchema {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id')
       table.string('nombre',60)
-      table.string('contato',60)
+      table.string('contacto',60)
+      //TODO:cambiar a contacto TYPO
       table
         .integer('id_agrupacion')
         .unsigned()
-        .references('agrupaciones.id')
+        .references('agrupacions.id')
         .onDelete('CASCADE')
       /**
        * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL

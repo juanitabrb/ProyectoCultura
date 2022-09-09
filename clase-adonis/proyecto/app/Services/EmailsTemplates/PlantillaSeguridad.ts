@@ -7,7 +7,7 @@ export default class PlantillaSeguridad {
     }
     forgotPassword(token){
         let html="<h1>Sistema Demo-Adonis</h1>";
-
+ 
         html+="<p>Para solicitar el restablecimiento de su contraseña ingrese  <a href='"+Env.get('URL_FRONTEND')+"/#/security/change-password/"+token+"'>aquí</a></p>";
         //html+="<p>Token:"+token+"</p>"
         return html;
