@@ -6,6 +6,7 @@ import Agrupacion from './Agrupacion'
 import Programacion from './Programacion';
 import Sitio from './Sitio';
 import Usuario from './Usuario';
+import Reserva from './Reserva';
 
 export default class Evento extends BaseModel {
   @column({ isPrimary: true })
@@ -36,7 +37,7 @@ export default class Evento extends BaseModel {
     pivotRelatedForeignKey:'id_agrupacion'
     //pivotColumns: ['nombre-columna'] //obtener datos de columnas adicionales
   })
-  public roles: ManyToMany<typeof Agrupacion>
+  public agrupaciones: ManyToMany<typeof Agrupacion>
 
   @hasOne(() => Programacion,{
     foreignKey: 'id_evento'
@@ -48,7 +49,7 @@ export default class Evento extends BaseModel {
   })
   public sitio: BelongsTo<typeof Sitio>
 
-  @manyToMany(() => Usuario, {
+  @manyToMany(() => Reserva, {
     pivotTable: 'reservas', //Nombre tabla pivote
     pivotForeignKey: 'id_evento', //Nombre de la clave que está en esta entidad
                                //pero en la tabla pivote
@@ -56,7 +57,7 @@ export default class Evento extends BaseModel {
                                           //que sirve de pivote en la relación
     pivotColumns: ['created_at'] //obtener datos de columnas adicionales
   })
-  public usuarios: ManyToMany<typeof Usuario>
+  public reservas: ManyToMany<typeof Reserva>
 
 
 

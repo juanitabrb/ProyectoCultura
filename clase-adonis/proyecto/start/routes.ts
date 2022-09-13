@@ -38,6 +38,12 @@ Route.post("/programaciones","ProgramacionsController.store");
 Route.delete("/programaciones/:id","ProgramacionsController.destroy");
 Route.put("/programaciones/:id","ProgramacionsController.update");
 
+Route.get("/reservas","ReservasController.index");
+Route.post("/reservas","ReservasController.store");
+Route.post("/reservas","ReservasController.store");
+Route.delete("/reservas/:id","ReservasController.destroy");
+Route.put("/reservas/:id","ReservasController.update");
+
 Route.get("/eventos","EventosController.index");
 Route.post("/eventos","EventosController.store");
 
