@@ -20,6 +20,9 @@ export default class Evento extends BaseModel {
   @column()
   public fecha:DateTime;
 
+  @column()
+  public id_sitio:number
+
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime
 

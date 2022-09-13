@@ -33,7 +33,10 @@ Route.delete("/usuarios/:id","UsuariosController.destroy");
 Route.post("/emailtest","EmailsController.index");
 
 Route.get("/programaciones","ProgramacionsController.index");
+Route.get("/programaciones/:id","ProgramacionsController.show");
 Route.post("/programaciones","ProgramacionsController.store");
+Route.delete("/programaciones/:id","ProgramacionsController.destroy");
+Route.put("/programaciones/:id","ProgramacionsController.update");
 
 Route.get("/eventos","EventosController.index");
 Route.post("/eventos","EventosController.store");
