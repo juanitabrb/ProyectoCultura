@@ -4,7 +4,7 @@ import Evento from "App/Models/Evento";
 
 export default class EventosController {
     public async index(ctx:HttpContextContract){
-        let eventos:Evento[]=await Evento.query()
+        let eventos:Evento[]=await Evento.query().preload('sitio').preload('programacion')
         //TODO:implementar preload de la programación de este evento
         return eventos;
     }

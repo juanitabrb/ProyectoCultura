@@ -23,6 +23,7 @@ export default class Evento extends BaseModel {
   @column()
   public id_sitio:number
 
+
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime
 
@@ -38,14 +39,14 @@ export default class Evento extends BaseModel {
   public roles: ManyToMany<typeof Agrupacion>
 
   @hasOne(() => Programacion,{
-    foreignKey: 'id_programacion'
+    foreignKey: 'id_evento'
   })
-  public perfil: HasOne<typeof Programacion>
+  public programacion: HasOne<typeof Programacion>
 
   @belongsTo(() => Sitio,{
     foreignKey: 'id_sitio',  //Nombre de la clave foránea de la entidad dominante
   })
-  public rol: BelongsTo<typeof Sitio>
+  public sitio: BelongsTo<typeof Sitio>
 
   @manyToMany(() => Usuario, {
     pivotTable: 'reservas', //Nombre tabla pivote
