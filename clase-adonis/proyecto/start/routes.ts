@@ -29,14 +29,27 @@ Route.post("/usuarios","UsuariosController.store");
 Route.get("/usuarios/:id","UsuariosController.show");
 Route.put("/usuarios/:id","UsuariosController.update");
 Route.delete("/usuarios/:id","UsuariosController.destroy");
+
 Route.post("/emailtest","EmailsController.index");
+
+Route.get("/programaciones","ProgramacionsController.index");
+Route.post("/programaciones","ProgramacionsController.store");
 
 Route.get("/eventos","EventosController.index");
 Route.post("/eventos","EventosController.store");
+
+Route.get("/sitios","SitiosController.index");
+Route.get("/sitios/:id","SitiosController.show");
+Route.post("/sitios","SitiosController.store");
+Route.delete("/sitios/:id","SitiosController.destroy");
+Route.put("/sitios/:id","SitiosController.update");
+
 Route.get("/agrupacions","AgrupacionsController.index");
 Route.post("/agrupacions","AgrupacionsController.store");
+
 Route.get("/managers","ManagersController.index");
 Route.post("/managers","ManagersController.store");
+
 Route.post("/login","SeguridadController.login");
 Route.post("/forgot","SeguridadController.forgotPassword");
 Route.post("/reset","SeguridadController.resetPassword");
