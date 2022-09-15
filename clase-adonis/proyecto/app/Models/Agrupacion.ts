@@ -25,7 +25,7 @@ export default class Agrupacion extends BaseModel {
   public manager:HasOne<typeof Manager>
 
   @manyToMany(() => Evento, {
-    pivotTable: 'contratos', //Nombre tabla pivote
+    pivotTable: 'contratoes', //Nombre tabla pivote
     pivotForeignKey: 'id_agrupacion', //Nombre de la clave que está en esta entidad
                                //pero en la tabla pivote
     pivotRelatedForeignKey: 'id_evento', //Nombre de la segunda clave

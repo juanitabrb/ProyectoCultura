@@ -36,7 +36,7 @@ export default class Evento extends BaseModel {
   public updatedAt: DateTime
 
   @manyToMany(() => Agrupacion, {
-    pivotTable: 'contratos', //Nombre tabla pivote
+    pivotTable: 'contratoes', //Nombre tabla pivote
     pivotForeignKey: 'id_evento',
     pivotRelatedForeignKey:'id_agrupacion'
     //pivotColumns: ['nombre-columna'] //obtener datos de columnas adicionales
@@ -58,7 +58,7 @@ export default class Evento extends BaseModel {
   })
   public sitio: BelongsTo<typeof Sitio>
 
-  @manyToMany(() => Reserva, {
+  @manyToMany(() => Usuario, {
     pivotTable: 'reservas', //Nombre tabla pivote
     pivotForeignKey: 'id_evento', //Nombre de la clave que está en esta entidad
                                //pero en la tabla pivote
@@ -66,7 +66,7 @@ export default class Evento extends BaseModel {
                                           //que sirve de pivote en la relación
     pivotColumns: ['created_at'] //obtener datos de columnas adicionales
   })
-  public reservas: ManyToMany<typeof Reserva>
+  public usuarios: ManyToMany<typeof Usuario>
 
 
 
