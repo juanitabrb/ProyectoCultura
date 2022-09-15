@@ -7,6 +7,7 @@ import Programacion from './Programacion';
 import Sitio from './Sitio';
 import Usuario from './Usuario';
 import Categoria from './Categoria';
+import Reserva from './Reserva';
 
 export default class Evento extends BaseModel {
   @column({ isPrimary: true })
@@ -23,6 +24,7 @@ export default class Evento extends BaseModel {
 
   @column()
   public id_sitio:number
+
 
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime
@@ -44,16 +46,16 @@ export default class Evento extends BaseModel {
   public categoria: BelongsTo<typeof Categoria>
 
   @hasOne(() => Programacion,{
-    foreignKey: 'id_programacion'
+    foreignKey: 'id_evento'
   })
-  public programación: HasOne<typeof Programacion>
+  public programacion: HasOne<typeof Programacion>
 
   @belongsTo(() => Sitio,{
     foreignKey: 'id_sitio',  //Nombre de la clave foránea de la entidad dominante
   })
   public sitio: BelongsTo<typeof Sitio>
 
-  @manyToMany(() => Usuario, {
+  @manyToMany(() => Reserva, {
     pivotTable: 'reservas', //Nombre tabla pivote
     pivotForeignKey: 'id_evento', //Nombre de la clave que está en esta entidad
                                //pero en la tabla pivote
@@ -61,7 +63,7 @@ export default class Evento extends BaseModel {
                                           //que sirve de pivote en la relación
     pivotColumns: ['created_at'] //obtener datos de columnas adicionales
   })
-  public usuarios: ManyToMany<typeof Usuario>
+  public reservas: ManyToMany<typeof Reserva>
 
 
 
