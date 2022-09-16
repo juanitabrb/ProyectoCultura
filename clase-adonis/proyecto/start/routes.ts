@@ -45,11 +45,13 @@ Route.delete("/programaciones/:id","ProgramacionsController.destroy");
 Route.put("/programaciones/:id","ProgramacionsController.update");
 
 Route.get("/reservas","ReservasController.index");
+Route.get("/reservas/:id","ReservasController.show");
 Route.post("/reservas","ReservasController.store");
 Route.delete("/reservas/:id","ReservasController.destroy");
 Route.put("/reservas/:id","ReservasController.update");
 
 Route.get("/eventos","EventosController.index");
+Route.get("/eventos/:id","EventosController.show");
 Route.post("/eventos","EventosController.store");
 Route.put("/eventos/:id","EventosController.update");
 Route.delete("/eventos/:id","EventosController.destroy");
@@ -64,14 +66,19 @@ Route.get("/agrupacions","AgrupacionsController.index");
 Route.post("/agrupacions","AgrupacionsController.store");
 Route.put("/agrupacions/:id","AgrupacionsController.update");
 Route.delete("/agrupacions/:id","AgrupacionsController.destroy");
+Route.get("/agrupacions/:id","AgrupacionsController.show");
 
 Route.get("/managers","ManagersController.index");
 Route.post("/managers","ManagersController.store");
 Route.put("/managers/:id","ManagersController.update");
 Route.delete("/managers/:id","ManagersController.destroy");
+Route.get("/managers/:id","ManagersController.show");
 
 Route.get("/categorias","CategoriasController.index");
 Route.post("/categorias","CategoriasController.store");
+Route.get("/categorias/:id","CategoriasController.show");
+Route.put("/categorias/:id","CategoriasController.update");
+Route.delete("/categorias/:id","CategoriasController.destroy");
 
 Route.post("/login","SeguridadController.login");
 Route.post("/forgot","SeguridadController.forgotPassword");
