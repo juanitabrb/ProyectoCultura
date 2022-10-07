@@ -9,6 +9,11 @@ export default class extends BaseSchema {
       table.string('nombre', 60).notNullable()
       table.string('descripcion',300)
       table.date('fecha')
+      table
+            .integer('id_categoria')
+            .unsigned()
+            .references('categorias.id')
+            .onDelete('SET NULL')
 
       table
             .integer('id_sitio')
