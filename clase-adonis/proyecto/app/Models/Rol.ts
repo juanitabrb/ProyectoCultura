@@ -29,7 +29,7 @@ export default class Rol extends BaseModel {
   public usuarios: HasMany<typeof Usuario>
 
   @manyToMany(() => Permiso, {
-    pivotTable: 'permiso_rol', //Nombre tabla pivote
+    pivotTable: 'permiso_rols', //Nombre tabla pivote
     pivotForeignKey: 'id_rol', //Nombre de la clave que está en esta entidad
                                //pero en la tabla pivote
     pivotRelatedForeignKey: 'id_permiso', //Nombre de la segunda clave

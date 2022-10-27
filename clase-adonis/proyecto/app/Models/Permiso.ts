@@ -23,7 +23,7 @@ export default class Permiso extends BaseModel {
   public updatedAt: DateTime
 
   @manyToMany(() => Rol, {
-    pivotTable: 'permiso_rol', //Nombre tabla pivote
+    pivotTable: 'permiso_rols', //Nombre tabla pivote
     pivotForeignKey: 'id_permiso',
     pivotRelatedForeignKey:'id_rol'
     //pivotColumns: ['nombre-columna'] //obtener datos de columnas adicionales
