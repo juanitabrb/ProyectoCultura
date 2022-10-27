@@ -10,6 +10,12 @@ export default class extends BaseSchema {
       table.string('nombre', 60).notNullable()
       table.string('correo', 254).notNullable()
       table.string('contrasena', 256).notNullable().unique()
+      table.integer('id_rol')
+            .unsigned()
+            .references('rols.id')
+            .onDelete('CASCADE')
+      table.timestamp('created_at', { useTz: true }).defaultTo(this.now())
+      table.timestamp('updated_at', { useTz: true }).defaultTo(this.now())
       /**
        * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL
        

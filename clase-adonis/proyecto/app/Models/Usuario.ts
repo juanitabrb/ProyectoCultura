@@ -40,17 +40,13 @@ export default class Usuario extends BaseModel {
   @column()
   public id_rol:number
 
-  @column()
-  public id_rol2:number
-
-
   @hasOne(() => Perfil,{
       foreignKey: 'id_usuario'
   })
   public perfil: HasOne<typeof Perfil>
  
   @belongsTo(() => Rol,{
-    foreignKey: 'id_rol2',
+    foreignKey: 'id_rol',
   })
   public rol: BelongsTo<typeof Rol>
 
