@@ -29,7 +29,15 @@ test.group('Sitios', () => {
         "capacidad": 100,
         "created_at": "2022-10-27T21:22:13.000-05:00",
         "updated_at": "2022-10-27T21:22:13.000-05:00"
-    }
+      },
+      {
+        "id": 2,
+        "nombre": "centro de eventos Expoferias",
+        "direccion": "avenida Alberto Mendoza",
+        "capacidad": 500,
+        "created_at": "2022-10-28T10:50:17.000-05:00",
+        "updated_at": "2022-10-28T10:50:17.000-05:00"
+     }
   ])
   });
  

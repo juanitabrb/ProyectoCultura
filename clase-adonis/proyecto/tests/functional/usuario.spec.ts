@@ -25,17 +25,27 @@ test.group('Usuarios', () => {
      response.assertStatus(200)
     response.assertBodyContains([
       {
-          "id": 1,
-          "nombre": "juanita",
-          "correo": "juanita.buriticaro@autonoma.edu.co",
-          "contrasena": "$argon2id$v=19$t=3,m=4096,p=1$VYLW8L+2Mc720t39hdenuw$N69YqOLHBrl60+/dGQBdFLtX2p0/3lk1rPMm4VvUkKU",
-          "id_rol": null,
-          "created_at": "2022-09-17T00:07:27.000-05:00",
-          "updated_at": "2022-09-17T00:07:27.000-05:00",
-          "rol": null,
-          "perfil": null
-          
-      }
+        "id": 1,
+        "nombre": "juanita",
+        "correo": "juanita.buriticaro@autonoma.edu.co",
+        "contrasena": "$argon2id$v=19$t=3,m=4096,p=1$VYLW8L+2Mc720t39hdenuw$N69YqOLHBrl60+/dGQBdFLtX2p0/3lk1rPMm4VvUkKU",
+        "id_rol": null,
+        "created_at": "2022-09-17T00:07:27.000-05:00",
+        "updated_at": "2022-09-17T00:07:27.000-05:00",
+        "rol": null,
+        "perfil": null
+    },
+    {
+        "id": 2,
+        "nombre": "hernando",
+        "correo": "hernando@correo.com",
+        "contrasena": "$argon2id$v=19$t=3,m=4096,p=1$IoSraS4TSFaMwTO7wJnOyQ$/0GS/uwDtyqANm0ttjymUKAtH8ExkXVB4DsqVDMoOFw",
+        "id_rol": null,
+        "created_at": "2022-10-28T10:48:37.000-05:00",
+        "updated_at": "2022-10-28T10:48:37.000-05:00",
+        "rol": null,
+        "perfil": null
+    }
   ])
   });
  
