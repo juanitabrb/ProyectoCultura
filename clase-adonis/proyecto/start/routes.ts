@@ -24,11 +24,10 @@ Route.get('/', async () => {
   return { hello: 'world' }
 })
 
-Route.get("/usuarios","UsuariosController.index");
-Route.post("/usuarios","UsuariosController.store");
-Route.get("/usuarios/:id","UsuariosController.show");
-Route.put("/usuarios/:id","UsuariosController.update");
-Route.delete("/usuarios/:id","UsuariosController.destroy");
+import './routes/usuarios'
+import './routes/roles'
+import './routes/permisos'
+import './routes/permisorols'
 
 Route.get("/contratos","ContratosController.index");
 Route.post("/contratos","ContratosController.store");

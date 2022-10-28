@@ -17,8 +17,11 @@ export default class UsuariosController {
      */
     public async store({request}:HttpContextContract){
         const body=request.body();
-        body.contrasena=Encryption.encrypt(body.contrasena);
+        //body.contrasena=Encryption.encrypt(body.contrasena);
         const nuevo_usuario:Usuario=await Usuario.create(body);
+        let theEmailService:EmailService=new EmailService();
+        theEmailService.sendEmail(body.correo,
+        "Nuevo Inicio de Sesión","Usted acaba de iniciar sesión en el sistema.")
         return nuevo_usuario;
     }
     /**
