@@ -34,6 +34,7 @@ test.group('Usuarios', () => {
           "updated_at": "2022-09-17T00:07:27.000-05:00",
           "rol": null,
           "perfil": null
+          
       }
   ])
   });
