@@ -25,7 +25,7 @@ export default class Permiso {
     })
 
     if (!acceptMethod) {
-      return response.unauthorized('Credenciales inválidas');
+      return response.unauthorized('No tiene acceso a esta ruta');
     }
 
     await next()

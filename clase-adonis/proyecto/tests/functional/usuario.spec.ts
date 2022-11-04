@@ -55,4 +55,34 @@ test.group('Usuarios', () => {
     ])
   });
 
+  test('actualizar usuarios', async ({ client, assert }) => {
+    const nuevo_usuario: Usuario = await Usuario.create(
+      { nombre: "pruebaUpdate", correo: "pruebaupdate@gmail.com", contrasena:"hola1234" }
+    )
+    const response = await client.put('/usuarios/' + nuevo_usuario.id)
+      .json({
+        correo: "modified@gmail.com",
+        perfil: {
+          id_usuario:nuevo_usuario.id,
+          celular: "1234567890",
+          url_instagram: "https://instagram.com"
+        }
+      }).loginAs(nuevo_usuario)
+    await nuevo_usuario.delete();
+    response.assertStatus(200)
+    assert.propertyVal(
+      response.body(),
+      'correo', 'modified@gmail.com'
+    );
+  });
+
+  test('eliminar usuarios', async ({ client, assert }) => {
+    const nuevo_usuario: Usuario = await Usuario.create(
+      { nombre: "pruebaDelete", correo: "pruebadelete@gmail.com", contrasena:"hola1234" }
+    )
+    const response = await client.delete('/usuarios/' + nuevo_usuario.id)
+      .loginAs(nuevo_usuario)
+    response.assertStatus(200)
+    assert.isEmpty(response.body())
+  });
 })

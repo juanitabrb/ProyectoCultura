@@ -28,6 +28,7 @@ import './routes/usuarios'
 import './routes/roles'
 import './routes/permisos'
 import './routes/permisorols'
+import './routes/perfiles'
 
 Route.get("/contratos","ContratosController.index");
 Route.post("/contratos","ContratosController.store");
@@ -61,11 +62,11 @@ Route.post("/sitios","SitiosController.store");
 Route.delete("/sitios/:id","SitiosController.destroy");
 Route.put("/sitios/:id","SitiosController.update");
 
-Route.get("/agrupacions","AgrupacionsController.index");
-Route.post("/agrupacions","AgrupacionsController.store");
-Route.put("/agrupacions/:id","AgrupacionsController.update");
-Route.delete("/agrupacions/:id","AgrupacionsController.destroy");
-Route.get("/agrupacions/:id","AgrupacionsController.show");
+Route.get("/agrupaciones","AgrupacionsController.index");
+Route.post("/agrupaciones","AgrupacionsController.store");
+Route.put("/agrupaciones/:id","AgrupacionsController.update");
+Route.delete("/agrupaciones/:id","AgrupacionsController.destroy");
+Route.get("/agrupaciones/:id","AgrupacionsController.show");
 
 Route.get("/managers","ManagersController.index");
 Route.post("/managers","ManagersController.store");
