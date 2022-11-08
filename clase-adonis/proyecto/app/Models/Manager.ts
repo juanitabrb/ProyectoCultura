@@ -6,7 +6,7 @@ export default class Manager extends BaseModel {
   public id: number
   
   @column()
-  public id_agrupacion:string;
+  public id_agrupacion:number;
 
   @column()
   public nombre:string;
