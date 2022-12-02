@@ -28,7 +28,7 @@ export default class UsuariosController {
      * Muestra la información de un solo usuario
      */
     public async show({params}:HttpContextContract) {
-        let el_usuario=await Usuario.query().where("id",params.id).preload('perfil');
+        let el_usuario=await Usuario.query().where("id",params.id).preload('perfil').firstOrFail();
         return el_usuario;
     }
     /**
