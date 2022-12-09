@@ -8,4 +8,5 @@ Route.group(
         Route.put("/permisorols/:id","PermisoRolsController.update");
         Route.delete("/permisorols/:id","PermisoRolsController.destroy");
     }
-).middleware(['permisos'])
+)
+//.middleware(['permisos'])
