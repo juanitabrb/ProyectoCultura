@@ -64,9 +64,9 @@ export default class Usuario extends BaseModel {
                                //pero en la tabla pivote
     pivotRelatedForeignKey: 'id_evento', //Nombre de la segunda clave
                                           //que sirve de pivote en la relación
-    //pivotColumns: ['created_at'] //obtener datos de columnas adicionales
   })
   public eventos: ManyToMany<typeof Evento>
+
 
   @beforeSave()
   public static async hashPassword (el_usuario: Usuario) {

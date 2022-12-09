@@ -4,7 +4,7 @@ import Agrupacion from "App/Models/Agrupacion";
 
 export default class AgrupacionsController {
     public async index(ctx:HttpContextContract){
-        let agrupaciones:Agrupacion[]=await Agrupacion.query().preload('manager');
+        let agrupaciones:Agrupacion[]=await Agrupacion.query().preload('manager').preload('eventos');
         return agrupaciones;
     }
 
@@ -15,7 +15,7 @@ export default class AgrupacionsController {
     }
 
     public async show({params}:HttpContextContract) {
-        return Agrupacion.findOrFail(params.id);
+        return await Agrupacion.query().preload('manager').preload('eventos').where('id',params.id).firstOrFail();
     }
     public async update({params,request}:HttpContextContract) {
         const body=request.body();
