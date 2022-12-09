@@ -8,5 +8,4 @@ Route.group(
         Route.put("/perfiles/:id","PerfilesController.update");
         Route.delete("/perfiles/:id","PerfilesController.destroy");
     }
-)
-//.middleware(['auth:api', 'permisos'])
+).middleware(['auth:api', /* 'permisos'*/])

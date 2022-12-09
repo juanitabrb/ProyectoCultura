@@ -28,7 +28,8 @@ import './routes/usuarios'
 import './routes/roles'
 import './routes/permisos'
 import './routes/permisorols'
-import './routes/perfiles'
+import './routes/perfiles'  
+import './routes/eventos'
 
 Route.get("/contratos","ContratosController.index");
 Route.post("/contratos","ContratosController.store");
@@ -50,11 +51,7 @@ Route.post("/reservas","ReservasController.store");
 Route.delete("/reservas/:id","ReservasController.destroy");
 Route.put("/reservas/:id","ReservasController.update");
 
-Route.get("/eventos","EventosController.index");
-Route.get("/eventos/:id","EventosController.show");
-Route.post("/eventos","EventosController.store");
-Route.put("/eventos/:id","EventosController.update");
-Route.delete("/eventos/:id","EventosController.destroy");
+
 
 Route.get("/sitios","SitiosController.index");
 Route.get("/sitios/:id","SitiosController.show");
