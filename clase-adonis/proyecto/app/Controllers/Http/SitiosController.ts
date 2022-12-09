@@ -9,8 +9,7 @@ export default class SitiosController {
     }
 
     public async show({params}:HttpContextContract) {
-        let el_sitio=await Sitio.query().where("id",params.id);
-        return el_sitio;
+        return Sitio.findOrFail(params.id);
     }
 
     public async store({request}:HttpContextContract){
