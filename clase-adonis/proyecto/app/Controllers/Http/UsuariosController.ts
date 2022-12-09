@@ -28,7 +28,7 @@ export default class UsuariosController {
      * Muestra la información de un solo usuario
      */
     public async show({params}:HttpContextContract) {
-        let el_usuario=await Usuario.query().where("id",params.id).preload('perfil').firstOrFail();
+        let el_usuario=await Usuario.query().where("id",params.id).preload('perfil').preload('eventos').firstOrFail();
         return el_usuario;
     }
     /**
@@ -40,7 +40,10 @@ export default class UsuariosController {
         const el_usuario:Usuario=await Usuario.findOrFail(params.id);
         el_usuario.nombre=body.nombre;
         el_usuario.correo=body.correo;
-        el_usuario.contrasena=Encryption.encrypt(body.contrasena);
+        if(body.contrasena){
+            console.log(body.contrasena);
+            el_usuario.contrasena=Encryption.encrypt(body.contrasena);
+        }
         el_usuario.id_rol=body.id_rol;
         if(body.perfil){
             body.perfil.id_usuario=params.id;
