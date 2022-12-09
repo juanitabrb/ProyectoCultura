@@ -7,7 +7,6 @@ import Programacion from './Programacion';
 import Sitio from './Sitio';
 import Usuario from './Usuario';
 import Categoria from './Categoria';
-import Reserva from './Reserva';
 
 export default class Evento extends BaseModel {
   @column({ isPrimary: true })
@@ -60,11 +59,9 @@ export default class Evento extends BaseModel {
 
   @manyToMany(() => Usuario, {
     pivotTable: 'reservas', //Nombre tabla pivote
-    pivotForeignKey: 'id_evento', //Nombre de la clave que está en esta entidad
-                               //pero en la tabla pivote
-    pivotRelatedForeignKey: 'id_usuario', //Nombre de la segunda clave
-                                          //que sirve de pivote en la relación
-    pivotColumns: ['created_at'] //obtener datos de columnas adicionales
+    pivotForeignKey: 'id_evento',
+    pivotRelatedForeignKey:'id_usuario'
+    //pivotColumns: ['nombre-columna'] //obtener datos de columnas adicionales
   })
   public usuarios: ManyToMany<typeof Usuario>
 

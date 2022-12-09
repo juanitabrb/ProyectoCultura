@@ -8,12 +8,15 @@ import {
   belongsTo,
   BelongsTo,
   hasMany,
-  HasMany
+  HasMany,
+  ManyToMany,
+  manyToMany
 } from '@ioc:Adonis/Lucid/Orm'
 import Perfil from './Perfil';
 import Rol from './Rol';
 import ApiToken from './ApiToken';
 import Hash from '@ioc:Adonis/Core/Hash'
+import Evento from './Evento';
 
 export default class Usuario extends BaseModel {
   public static table = 'usuarios'
@@ -55,6 +58,15 @@ export default class Usuario extends BaseModel {
   })
   public usuarios: HasMany<typeof ApiToken>
 
+  @manyToMany(() => Evento, {
+    pivotTable: 'reservas', //Nombre tabla pivote
+    pivotForeignKey: 'id_usuario', //Nombre de la clave que está en esta entidad
+                               //pero en la tabla pivote
+    pivotRelatedForeignKey: 'id_evento', //Nombre de la segunda clave
+                                          //que sirve de pivote en la relación
+    //pivotColumns: ['created_at'] //obtener datos de columnas adicionales
+  })
+  public eventos: ManyToMany<typeof Evento>
 
   @beforeSave()
   public static async hashPassword (el_usuario: Usuario) {

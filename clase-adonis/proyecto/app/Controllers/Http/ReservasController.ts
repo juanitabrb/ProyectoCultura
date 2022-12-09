@@ -4,7 +4,7 @@ import Reserva from 'App/Models/Reserva';
 export default class ReservasController {
 
     public async index(ctx:HttpContextContract){
-        let reservas:Reserva[]=await Reserva.query()
+        let reservas:Reserva[]=await Reserva.query()//.preload('evento').preload('usuario');
         return reservas;
     }
 
